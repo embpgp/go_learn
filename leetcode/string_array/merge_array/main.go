@@ -32,6 +32,18 @@ func (p Element) Less(i, j int) bool {
 	return p[i][0] < p[j][0]
 }
 
+/*
+leetcode来源：
+思路
+按照最终的排序状态，肯定是连续的集合
+
+算法思路
+我们用数组 merged 存储最终的答案。
+首先，我们将列表中的区间按照左端点升序排序。然后我们将第一个区间加入 merged 数组中，并按顺序依次考虑之后的每个区间：
+如果当前区间的左端点在数组 merged 中最后一个区间的右端点之后，那么它们不会重合，我们可以直接将这个区间加入数组 merged 的末尾；
+否则，它们重合，我们需要用当前区间的右端点更新数组 merged 中最后一个区间的右端点，将其置为二者的较大值。
+左端点不需要设置，因为已经排序好了。
+*/
 func merge(intervals [][]int) [][]int {
 
 	ret := make([][]int, 0)
@@ -43,7 +55,7 @@ func merge(intervals [][]int) [][]int {
 			ret = append(ret, intervals[i])
 			retIndex++
 		} else { // 相邻两个区间重合，则合并成一个区间
-			ret[retIndex][0] = min(ret[retIndex][0], intervals[i][0])
+			//ret[retIndex][0] = min(ret[retIndex][0], intervals[i][0])
 			ret[retIndex][1] = max(ret[retIndex][1], intervals[i][1])
 		}
 	}

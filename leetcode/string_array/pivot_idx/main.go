@@ -2,6 +2,10 @@ package main
 
 import "fmt"
 
+/*
+算法思路：
+最终的状态，当找到找个节点的时候，其左边的和sum+num[i] = 右边的和(total-sum)
+*/
 func pivotIndex(nums []int) int {
 
 	total := 0

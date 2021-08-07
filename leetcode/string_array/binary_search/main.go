@@ -2,6 +2,11 @@ package main
 
 import "fmt"
 
+/*
+思路：
+最终的状态转化为二分查找算法，找到一个要插入的位置
+*/
+
 func searchInsert(nums []int, target int) int {
 
 	right := len(nums) - 1

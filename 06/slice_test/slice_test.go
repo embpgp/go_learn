@@ -14,3 +14,13 @@ func TestSliceGrowing(t *testing.T) {
 		t.Log(len(s), cap(s))
 	}
 }
+
+func TestSliceShareMemory(t *testing.T) {
+	year := []string{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
+		"Oct", "Nov", "Dec"}
+	Q2 := year[3:6]
+	t.Log(Q2, len(Q2), cap(Q2))
+	summer := year[5:10]
+	t.Log(summer, len(summer), cap(summer))
+
+}

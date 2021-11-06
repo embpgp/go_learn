@@ -7,7 +7,7 @@ import (
 
 func GetFibonacci(n int) ([]int, error) {
 	if n < 2 || n > 1000 {
-		return nil, errors.New("n should be [2, 1000]")
+		return nil, errors.New("n should be in [2, 1000]")
 	}
 	fibList := []int{1, 1}
 

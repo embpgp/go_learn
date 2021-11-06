@@ -48,6 +48,6 @@ func TestCounterWaitGroup(t *testing.T) {
 			wg.Done()
 		}()
 	}
-	wg.Wait()
+	wg.Wait() //阻塞在这里等待
 	t.Logf("counter = %d", counter)
 }

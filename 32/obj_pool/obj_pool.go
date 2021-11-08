@@ -34,7 +34,7 @@ func (p *ObjPool) ReleaseObj(obj *ReusableObj) error {
 	select {
 	case p.bufChan <- obj:
 		return nil
-	default: //不属于ch的对象写入，导致上述阻塞直接走dafault
+	default: //不属于ch的对象写入，导致上述阻塞直接走default
 		return errors.New("overflow")
 	}
 }

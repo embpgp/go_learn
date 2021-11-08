@@ -2,7 +2,7 @@ package client
 
 import (
 	"fmt"
-	"go_learn/15/series"
+	"go_learn/GO_lang_video/15/series"
 	"testing"
 )
 

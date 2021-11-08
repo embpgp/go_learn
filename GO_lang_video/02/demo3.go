@@ -3,17 +3,23 @@ package main
 import (
 	"flag"
 	"fmt"
+	"os"
 )
 
 //var name string
 
 var name = flag.String("name", "everyone", "The greeting obj")
-func init(){
+
+func init() {
 	fmt.Print("init...\n")
 
 }
 
-func main(){
+func main() {
+	flag.Usage = func() {
+		fmt.Fprintf(os.Stderr, "Usage of %s:\n", "question")
+		flag.PrintDefaults()
+	}
 	flag.Parse()
 	fmt.Printf("hello, %s!!\n", *name)
 }

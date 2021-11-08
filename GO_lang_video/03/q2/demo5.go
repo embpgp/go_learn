@@ -1,19 +1,19 @@
 package main
 
 import (
-	"lib"
 	"flag"
+	"lib"
 )
 
 var name string
 
-func init(){
+func init() {
 	//fmt.Print("init...\n")
 	flag.StringVar(&name, "name", "everyone", "The greeting obj")
 
 }
 
-func main(){
+func main() {
 	flag.Parse()
 	//fmt.Printf("hello, %s!!\n", *name)
 	lib.Hello(name)

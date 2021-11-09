@@ -11,4 +11,5 @@ require (
 	github.com/smartystreets/goconvey v1.7.2 // indirect
 	github.com/spf13/cobra v1.2.1 // indirect
 	github.com/stretchr/testify v1.7.0 // indirect
+	gopl.io v0.0.0-20211004154805-1ae3ec64947b // indirect
 )
